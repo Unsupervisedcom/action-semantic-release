@@ -1,3 +1,10 @@
+# 1.0.0 (2022-01-06)
+
+
+### Bug Fixes
+
+* Initial release ([b5163a5](https://github.com/Unsupervisedcom/action-semantic-release/commit/b5163a5aaa82e41e3242098c9ac033412226d57e))
+
 # 1.0.0 (2021-12-20)
 
 

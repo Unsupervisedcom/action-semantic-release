@@ -1,11 +1,11 @@
 <!-- start title -->
 
-# GitHub Action:Hello World
+# GitHub Action:Semantic Release
 
 <!-- end title -->
 <!-- start description -->
 
-Greet someone
+Perform a semantic release. Includes an option to toggle `include administrators` on branch protection, and then run semantic-release with a given release config
 
 <!-- end description -->
 <!-- start contents -->
@@ -13,19 +13,31 @@ Greet someone
 <!-- start usage -->
 
 ```yaml
-- uses: Unsupervisedcom/action-composite-action-template@undefined
+- uses: Unsupervisedcom/action-semantic-release@undefined
   with:
-    # Who to greet
-    # Default: World
-    who-to-greet: ""
+    # git token to use for the run
+    token: ""
+
+    # If true, this action will disable the `include administrators` setting in branch
+    # protection for this branch, and re-enable it after release. Re-enabling is run
+    # using always()
+    # Default: false
+    toggle-admins: ""
+
+    # The release configuration to use for the release. Set this to
+    # `@unsupervised/release-config-javascript-actions` for javascript actions
+    # Default: @unsupervised/release-config-general
+    release-config: ""
 ```
 
 <!-- end usage -->
    <!-- start inputs -->
 
-| **Input**          | **Description** | **Default** | **Required** |
-| :----------------- | :-------------- | :---------: | :----------: |
-| **`who-to-greet`** | Who to greet    |   `World`   |   **true**   |
+| **Input**            | **Description**                                                                                                                                                                |              **Default**               | **Required** |
+| :------------------- | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | :------------------------------------: | :----------: |
+| **`token`**          | git token to use for the run                                                                                                                                                   |                                        |   **true**   |
+| **`toggle-admins`**  | If true, this action will disable the `include administrators` setting in branch protection for this branch, and re-enable it after release. Re-enabling is run using always() |                                        |  **false**   |
+| **`release-config`** | The release configuration to use for the release. Set this to `@unsupervised/release-config-javascript-actions` for javascript actions                                         | `@unsupervised/release-config-general` |  **false**   |
 
 <!-- end inputs -->
    <!-- start outputs -->
